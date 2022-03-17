@@ -1,0 +1,20 @@
+package metadata;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBMD {
+
+	public static void main(String[] args) {
+		 String url ="jdbc:sqlserver://localhost:1433;databaseName=Northwind";
+		 String user="123";
+		 String pwd="123456";
+		 
+		 try(Connection conn = DriverManager.getConnection(url, user, pwd)){
+
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+
+}

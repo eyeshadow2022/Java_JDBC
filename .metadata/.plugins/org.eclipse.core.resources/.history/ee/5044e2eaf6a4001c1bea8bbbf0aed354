@@ -1,0 +1,22 @@
+package shippingDAO;
+
+import java.util.List;
+
+import shippingDAO.bean.Shipper;
+
+public class test {
+
+	public static void main(String[] args) {
+		Test t = new Test();
+		t.test1();
+		t.test2();
+		}
+		public  void test1() {
+		ShippersDAO sDAO=new shippersDAOImpl();
+		List<Shipper> selectAllShipper = sDAO.selectAllShipper();
+		//shipping s= sDAO.selectShipperById(1)
+		System.out.println(selectAllShipper);
+		}
+	}
+
+}

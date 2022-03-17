@@ -1,0 +1,50 @@
+package shippingDAO;
+
+import java.util.List;
+
+import connectionUtil.MyConnectionUtil;
+import connectionUtil.connectionUtilImpl.MyConnectionUtilImpl;
+import shippingDAO.bean.Shipper;
+
+public class shipperDAOImpl implements ShippingDAO {
+
+	@Override
+	public List<Shipper> selectAllShipper() {
+		MyConnectionUtil mcUtil = new MyConnectionUtilImpl();
+		String sql ="SELECT [ShipperID] ,[CompanyName],[Phone]"
+				+ "FROM Shippers";
+		
+		try {
+			Connction conn = mcUtil.getConnection();
+			Statement stmt = conn.createStatement();
+		}catch{
+			
+		}
+		return null;
+	}
+
+	@Override
+	public Shipper selectShipperById(int ShipperId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addShipper(Shipper s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateShipper(Shipper s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteShipper(int ShipperId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

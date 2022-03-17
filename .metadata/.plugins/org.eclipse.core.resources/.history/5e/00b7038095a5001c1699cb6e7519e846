@@ -1,0 +1,18 @@
+package procedureDemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class callProcDemo {
+
+	public static void main(String[] args) {
+		private String url ="jdbc:sqlderver://localhost:1433;databaseName=Northwind";
+		private String user="123";
+		private String password="123456";
+		
+		try(Connection conn = DriverManager.getConnection(url, user, password)){
+			
+		})
+	}
+
+}

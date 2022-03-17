@@ -1,0 +1,43 @@
+package metadata;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+
+public class RSDBMD {
+
+	public static void main(String[] args) {
+		
+		
+		String url="jdbc:sqlserver://localhost:1433;databasename=Northwind";
+		String user="123";
+		String pwd="123456";
+		String sql="SELECT * FROM [Northwind].[dbo].[Customers]";
+		
+		try(Connection conn = DriverManager.getConnection(url, user, pwd)){
+			PreparedStatement stmt=conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+					
+			ResultSetMetaData metaData = rs.getMetaData();
+			System.out.println(metaData.getColumnCount());
+			while(rs.next()) {
+				for (int i = 1; i<= metaData.getColumnCount();i++) {
+					System.out.println(metaData.getColumnName(i)+":"+rs.getString(i));
+					System.out.println(metaData.getColumnLabel(i)+":"+metaData.getColumnTypeName(i));
+				}
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package procedureDemo;
+
+public class callProcDemo {
+
+	public static void main(String[] args) {
+		private String url ="jdbc:sqlderver://localhost:1433;databaseName=Northwind";
+		private String userName="123";
+		private String password="123456";
+	}
+
+}

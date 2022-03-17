@@ -1,0 +1,22 @@
+package procedureDemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class callProcDemo {
+
+	public static void main(String[] args) {
+		 String url ="jdbc:sqlderver://localhost:1433;databaseName=Northwind";
+		 String user="123";
+		 String pwd="123456";
+		
+		try(Connection conn = DriverManager.getConnection(url, user, pwd)){
+			
+		} catch (SQLExecption e) {
+			e.printStackTrace();
+		}
+		)
+	
+	}
+}

@@ -1,0 +1,14 @@
+package shippingDAO;
+
+import ShippersDAO.ShippersDAO;
+import ShippersDAO.bean.Shipper;
+import ShippersDAO.impl.ShippersDAOImpl;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

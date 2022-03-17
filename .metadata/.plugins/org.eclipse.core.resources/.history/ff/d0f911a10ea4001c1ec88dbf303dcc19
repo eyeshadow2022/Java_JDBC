@@ -1,0 +1,14 @@
+package M1_JDBCDemo;
+
+public class DriverRegDemo {
+
+	public static void main(String[] args) {
+		System.setProperty("jdbc.drivers", 
+				"com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		}
+
+
+	}
+	
+
+

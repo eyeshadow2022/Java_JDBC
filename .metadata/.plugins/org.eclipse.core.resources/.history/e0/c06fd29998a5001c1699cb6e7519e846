@@ -1,0 +1,25 @@
+package procedureDemo;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class callProcDemo {
+
+	public static void main(String[] args) {
+		 String url ="jdbc:sqlderver://localhost:1433;databaseName=Northwind";
+		 String user="123";
+		 String pwd="123456";
+		
+		try(Connection conn = DriverManager.getConnection(url, user, pwd)){
+			CallableStatement pcall = conn.prepareCall("{call CustOrdersOrders(?)}");//?=>nchar(5)
+			pcall.setString(1,"ALFKI");
+			boolean haveRs = pcall.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

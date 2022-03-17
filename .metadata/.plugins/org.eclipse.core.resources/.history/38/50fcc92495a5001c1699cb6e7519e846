@@ -1,0 +1,10 @@
+package procedureDemo;
+
+public class callProcDemo {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,30 @@
+package connectionUtil.connectionUtilImpl;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import connectionUtil.MyConnectionUtil;
+
+public class MyConnectionUtilImpl implements MyConnectionUtil{
+	
+	String url ="jdbc:sqlserver://localhost:1433;databaseName=Northwind";
+	String userName="123";
+	String password="123456";
+	
+	@Override
+	public Connection getConnection() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void free(Connection conn, Statement stmt, ResultSet rs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+}

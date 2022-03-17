@@ -1,0 +1,7 @@
+package shippingDAO;
+
+public class Shipper {
+	private int ShipperID;
+	private String CompanyName;
+	private String Phone;
+}

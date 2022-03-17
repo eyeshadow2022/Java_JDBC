@@ -1,0 +1,87 @@
+package shippingDAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import connectionUtil.MyConnectionUtil;
+import connectionUtil.connectionUtilImpl.MyConnectionUtilImpl;
+import shippingDAO.bean.Shipper;
+
+public class shippersDAOImpl implements ShippersDAO {
+
+	@Override
+	public List<Shipper> selectAllShipper() {
+		MyConnectionUtil mcUtil = new MyConnectionUtilImpl();
+		String sql ="SELECT [ShipperID] ,[CompanyName],[Phone]"
+				+ "FROM Shippers";
+		List<Shipper> shipperList = new ArrayList<Shipper>();
+		try {
+			Connection conn = mcUtil.getConnection();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				Shipper s = new Shipper();
+				s.setShipperID(rs.getInt("ShipperID"));
+				s.setCompanyName(rs.getString("CompanyName"));
+				s.setPhone(rs.getString("Phone"));
+				shipperList.add(s);
+			}
+			
+			mcUtil.free(conn, stmt, rs);
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+			
+		return shipperList;
+	}
+
+	@Override
+	public Shipper selectShipperById(int ShipperId) {
+		MyConnectionUtil myConnUtil = new MyConnectionUtilImpl();
+		String sql = "SELECT [ShipperID] ,[CompanyName],[Phone]\r\n"
+				+ "  FROM Shippers\r\n"
+				+ "  where ShipperID=?";
+		try {
+			Connection conn = myConnUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ShipperId);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				Shipper s = new Shipper();
+				s.setShipperID(ShipperId);
+				s.setCompanyName(rs.getString("CompanyName"));
+				s.setPhone(rs.getString("Phone"));
+			}
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean addShipper(Shipper s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateShipper(Shipper s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteShipper(int ShipperId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

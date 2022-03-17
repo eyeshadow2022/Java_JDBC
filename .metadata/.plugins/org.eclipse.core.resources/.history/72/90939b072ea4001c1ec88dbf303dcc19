@@ -1,0 +1,28 @@
+package M2_ConnectionDemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class GetConnectionDemo {
+	
+	public static void main(String[] args) {
+		String url ="jdbc:sqlserver://localhost:1433;databaseName=Northwind";
+		String userName="123";
+		String password="123456";
+		
+		try {
+			Connection conn =  DriverManager.getConnection(url, userName, password);
+			System.out.println("連線成功");
+			Thread.sleep(10000);
+			conn.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

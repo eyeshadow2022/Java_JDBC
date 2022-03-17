@@ -1,0 +1,13 @@
+package M2_GetConnectionDemo;
+
+public class GetConnectionDemo {
+	String url ="jdbc:sqlserver ://localhost:1433;databaseName=Northwind";
+	String userName="123";
+	String password="password";
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

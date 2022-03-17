@@ -1,0 +1,12 @@
+package metadata;
+
+public class DBMD {
+
+	public static void main(String[] args) {
+		 String url ="jdbc:sqlserver://localhost:1433;databaseName=Northwind";
+		 String user="123";
+		 String pwd="123456";
+
+	}
+
+}

@@ -1,0 +1,37 @@
+package procedureDemo;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DbToFile{
+
+	public static void main(String[] args) {
+		 String url ="jdbc:sqlserver://localhost:1433;databaseName=Northwind";
+		 String user="123";
+		 String pwd="123456";
+		 String sql="";
+		
+		String imgName = "C:\\pink.gif";
+		try(Connection conn = DriverManager.getConnection(url, user, pwd)){
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+}

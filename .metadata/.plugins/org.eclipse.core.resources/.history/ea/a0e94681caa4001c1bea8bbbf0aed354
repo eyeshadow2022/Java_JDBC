@@ -1,0 +1,31 @@
+package M2_ConnectionDemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class GetConnectionDemo4 {
+	
+	public static void main(String[] args) {
+		String url ="jdbc:sqlserver://localhost:1433;databaseName=Northwind";
+		String userName="123";
+		String password="123456";
+		
+		String insertCC="INSERT INTO [dbo].[CustomerDemographics]"
+				+ "([CustomerTypeID] ,[CustomerDesc])"
+				+ "VALUES ('A','B')";
+		
+		try (Connection conn =  DriverManager.getConnection(url, userName, password)){
+			
+			Statement stmt = conn.createStatement();
+			int count = stmt.executeUpdate(insertCC);
+			System.out.println("新增了"+count+"筆");
+			)
+		}
+			
+		} 
+	}
+
+
