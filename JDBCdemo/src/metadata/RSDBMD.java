@@ -45,7 +45,8 @@ public class RSDBMD {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		} 
 		

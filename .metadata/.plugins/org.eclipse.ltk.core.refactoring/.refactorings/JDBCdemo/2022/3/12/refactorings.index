@@ -35,3 +35,8 @@
 1647495731753	Extract local variable 'binaryStream'
 1647500370392	Copy compilation unit
 1647500542954	Extract local variable 'metaData'
+1647569586637	Copy compilation unit
+1647569777402	Extract local variable 'stmt'
+1647571352587	Copy compilation unit
+1647571644069	Extract local variable 'pstmt'
+1647571918559	Extract local variable 'executeBatch'
